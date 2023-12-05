@@ -5,8 +5,8 @@
 
 # Global Address Object
 [Mm]elissa[Uu]pdater/
-[Mm]elissa[Gg]lobal[Aa]ddress[Oo]bject[Ww]indows[Dd]otnet/[Dd]ata
-[Mm]elissa[Gg]lobal[Aa]ddress[Oo]bject[Ww]indows[Dd]otnet/[Bb]uild
+[Mm]elissa[Gg]lobal[Aa]ddress[Oo]bject[Ll]inux[Dd]otnet/[Dd]ata
+[Mm]elissa[Gg]lobal[Aa]ddress[Oo]bject[Ll]inux[Dd]otnet/[Bb]uild
 
 # User-specific files
 *.rsuser
@@ -14,6 +14,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.hash
+*.so
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -347,9 +349,6 @@ healthchecksdb
 
 # Data
 Data/
-
-#Wrapper
-mdPhoneNET.dll
 
 #.exe files
 *.exe

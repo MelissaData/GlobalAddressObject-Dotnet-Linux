@@ -7,7 +7,7 @@ Please feel free to copy or embed this code to your own project. Happy coding!
 
 For the latest Melissa Global Address Object release notes, please visit: https://releasenotes.melissa.com/on-premise-api/global-address-object/
 
-For further details, please visit: https://wiki.melissadata.com/index.php?title=Global_Address_Object:Reference
+For further details, please visit: https://docs.melissa.com/on-premise-api/global-address-object/global-address-object-quickstart.html
 
 The console will ask the user for:
 
