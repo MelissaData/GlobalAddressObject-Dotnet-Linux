@@ -110,13 +110,13 @@ namespace MelissaData {
 		}
 
 		public bool SetLicenseString(string p1) {
-			Utf8String u_p1 = new Utf8String(p1);
-			return (mdGlobalAddrUnmanaged.mdGlobalAddrSetLicenseString(i, u_p1.GetUtf8Ptr()) != 0);
+			EncodedString u_p1 = new EncodedString(p1);
+			return (mdGlobalAddrUnmanaged.mdGlobalAddrSetLicenseString(i, u_p1.GetPtr()) != 0);
 		}
 
 		public void SetPathToGlobalAddrFiles(string p1) {
-			Utf8String u_p1 = new Utf8String(p1);
-			mdGlobalAddrUnmanaged.mdGlobalAddrSetPathToGlobalAddrFiles(i, u_p1.GetUtf8Ptr());
+			EncodedString u_p1 = new EncodedString(p1);
+			mdGlobalAddrUnmanaged.mdGlobalAddrSetPathToGlobalAddrFiles(i, u_p1.GetPtr());
 		}
 
 		public ProgramStatus InitializeDataFiles() {
@@ -128,9 +128,9 @@ namespace MelissaData {
 		}
 
 		public bool SetInputParameter(string pszParamName, string pszParamValue) {
-			Utf8String u_pszParamName = new Utf8String(pszParamName);
-			Utf8String u_pszParamValue = new Utf8String(pszParamValue);
-			return (mdGlobalAddrUnmanaged.mdGlobalAddrSetInputParameter(i, u_pszParamName.GetUtf8Ptr(), u_pszParamValue.GetUtf8Ptr()) != 0);
+			EncodedString u_pszParamName = new EncodedString(pszParamName);
+			EncodedString u_pszParamValue = new EncodedString(pszParamValue);
+			return (mdGlobalAddrUnmanaged.mdGlobalAddrSetInputParameter(i, u_pszParamName.GetPtr(), u_pszParamValue.GetPtr()) != 0);
 		}
 
 		public int VerifyAddress() {
@@ -138,84 +138,85 @@ namespace MelissaData {
 		}
 
 		public string GetOutputParameter(string pszParamName) {
-			Utf8String u_pszParamName = new Utf8String(pszParamName);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrGetOutputParameter(i, u_pszParamName.GetUtf8Ptr()));
+			EncodedString u_pszParamName = new EncodedString(pszParamName);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrGetOutputParameter(i, u_pszParamName.GetPtr()));
 		}
 
 		public string TransliterateText(string pszInput, string pszInputScript, string pszOutputScript) {
-			Utf8String u_pszInput = new Utf8String(pszInput);
-			Utf8String u_pszInputScript = new Utf8String(pszInputScript);
-			Utf8String u_pszOutputScript = new Utf8String(pszOutputScript);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrTransliterateText(i, u_pszInput.GetUtf8Ptr(), u_pszInputScript.GetUtf8Ptr(), u_pszOutputScript.GetUtf8Ptr()));
+			EncodedString u_pszInput = new EncodedString(pszInput);
+			EncodedString u_pszInputScript = new EncodedString(pszInputScript);
+			EncodedString u_pszOutputScript = new EncodedString(pszOutputScript);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrTransliterateText(i, u_pszInput.GetPtr(), u_pszInputScript.GetPtr(), u_pszOutputScript.GetPtr()));
 		}
 
 		public string GetCurrentAtomSet() {
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrGetCurrentAtomSet(i));
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrGetCurrentAtomSet(i));
 		}
 
 		public string InputsAsAtomSet() {
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrInputsAsAtomSet(i));
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrInputsAsAtomSet(i));
 		}
 
 		public string RightFieldResultsAsAtomSet(string pszAtomSet) {
-			Utf8String u_pszAtomSet = new Utf8String(pszAtomSet);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrRightFieldResultsAsAtomSet(i, u_pszAtomSet.GetUtf8Ptr()));
+			EncodedString u_pszAtomSet = new EncodedString(pszAtomSet);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrRightFieldResultsAsAtomSet(i, u_pszAtomSet.GetPtr()));
 		}
 
 		public string TokenizerResultsAsAtomSet(string pszAtomSet) {
-			Utf8String u_pszAtomSet = new Utf8String(pszAtomSet);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrTokenizerResultsAsAtomSet(i, u_pszAtomSet.GetUtf8Ptr()));
+			EncodedString u_pszAtomSet = new EncodedString(pszAtomSet);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrTokenizerResultsAsAtomSet(i, u_pszAtomSet.GetPtr()));
 		}
 
 		public string InputMapperResultsAsAtomSet(string pszAtomSetArray) {
-			Utf8String u_pszAtomSetArray = new Utf8String(pszAtomSetArray);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrInputMapperResultsAsAtomSet(i, u_pszAtomSetArray.GetUtf8Ptr()));
+			EncodedString u_pszAtomSetArray = new EncodedString(pszAtomSetArray);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrInputMapperResultsAsAtomSet(i, u_pszAtomSetArray.GetPtr()));
 		}
 
 		public string MatchEngineResultsAsAtomSet(string pszAtomSetArray) {
-			Utf8String u_pszAtomSetArray = new Utf8String(pszAtomSetArray);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrMatchEngineResultsAsAtomSet(i, u_pszAtomSetArray.GetUtf8Ptr()));
+			EncodedString u_pszAtomSetArray = new EncodedString(pszAtomSetArray);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrMatchEngineResultsAsAtomSet(i, u_pszAtomSetArray.GetPtr()));
 		}
 
 		public string OutputMappingResultsAsAtomSet(string pszAtomSet) {
-			Utf8String u_pszAtomSet = new Utf8String(pszAtomSet);
-			return Utf8String.GetUnicodeString(mdGlobalAddrUnmanaged.mdGlobalAddrOutputMappingResultsAsAtomSet(i, u_pszAtomSet.GetUtf8Ptr()));
+			EncodedString u_pszAtomSet = new EncodedString(pszAtomSet);
+			return EncodedString.GetEncodedString(mdGlobalAddrUnmanaged.mdGlobalAddrOutputMappingResultsAsAtomSet(i, u_pszAtomSet.GetPtr()));
 		}
 
 		public void SetOutputsFromAtomSet(string pszAtomSet) {
-			Utf8String u_pszAtomSet = new Utf8String(pszAtomSet);
-			mdGlobalAddrUnmanaged.mdGlobalAddrSetOutputsFromAtomSet(i, u_pszAtomSet.GetUtf8Ptr());
+			EncodedString u_pszAtomSet = new EncodedString(pszAtomSet);
+			mdGlobalAddrUnmanaged.mdGlobalAddrSetOutputsFromAtomSet(i, u_pszAtomSet.GetPtr());
 		}
 
-		private class Utf8String : IDisposable {
-			private IntPtr utf8String = IntPtr.Zero;
+		private class EncodedString : IDisposable {
+			private IntPtr encodedString = IntPtr.Zero;
+			private static Encoding encoding = Encoding.UTF8;
 
-			public Utf8String(string str) {
+			public EncodedString(string str) {
 				if (str == null)
 					str = "";
-				byte[] buffer = Encoding.UTF8.GetBytes(str);
+				byte[] buffer = encoding.GetBytes(str);
 				Array.Resize(ref buffer, buffer.Length + 1);
 				buffer[buffer.Length - 1] = 0;
-				utf8String = Marshal.AllocHGlobal(buffer.Length);
-				Marshal.Copy(buffer, 0, utf8String, buffer.Length);
+				encodedString = Marshal.AllocHGlobal(buffer.Length);
+				Marshal.Copy(buffer, 0, encodedString, buffer.Length);
 			}
 
-			~Utf8String() {
+			~EncodedString() {
 				Dispose();
 			}
 
 			public virtual void Dispose() {
 				lock (this) {
-					Marshal.FreeHGlobal(utf8String);
+					Marshal.FreeHGlobal(encodedString);
 					GC.SuppressFinalize(this);
 				}
 			}
 
-			public IntPtr GetUtf8Ptr() {
-				return utf8String;
+			public IntPtr GetPtr() {
+				return encodedString;
 			}
 
-			public static string GetUnicodeString(IntPtr ptr) {
+			public static string GetEncodedString(IntPtr ptr) {
 				if (ptr == IntPtr.Zero)
 					return "";
 				int len = 0;
@@ -225,7 +226,7 @@ namespace MelissaData {
 					return "";
 				byte[] buffer = new byte[len];
 				Marshal.Copy(ptr, buffer, 0, len);
-				return Encoding.UTF8.GetString(buffer);
+				return encoding.GetString(buffer);
 			}
 		}
 	}

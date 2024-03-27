@@ -17,6 +17,7 @@ locality=""
 administrativeArea=""
 postalCode=""
 country=""
+dataPath=""
 license=""
 quiet="false"
 
@@ -25,7 +26,7 @@ while [ $# -gt 0 ] ; do
     --addressLine1) 
         addressLine1="$2"
 
-        if [ "$addressLine1" == "--addressLine2" ] || [ "$addressLine1" == "--addressLine3" ] || [ "$addressLine1" == "--locality" ] || [ "$addressLine1" == "--administrativeArea" ] || [ "$addressLine1" == "--postalCode" ] || [ "$addressLine1" == "--country" ] || [ "$addressLine1" == "--license" ] || [ "$addressLine1" == "--quiet" ] || [ -z "$addressLine1" ];
+        if [ "$addressLine1" == "--addressLine2" ] || [ "$addressLine1" == "--addressLine3" ] || [ "$addressLine1" == "--locality" ] || [ "$addressLine1" == "--administrativeArea" ] || [ "$addressLine1" == "--postalCode" ] || [ "$addressLine1" == "--country" ] || [ "$addressLine1" == "--dataPath" ] || [ "$addressLine1" == "--license" ] || [ "$addressLine1" == "--quiet" ] || [ -z "$addressLine1" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'addressLine1\'.${NC}\n"  
             exit 1
@@ -34,7 +35,7 @@ while [ $# -gt 0 ] ; do
     --addressLine2) 
         addressLine2="$2"
 
-        if [ "$addressLine2" == "--addressLine1" ] || [ "$addressLine2" == "--addressLine3" ] || [ "$addressLine2" == "--locality" ] || [ "$addressLine2" == "--administrativeArea" ] || [ "$addressLine2" == "--postalCode" ] || [ "$addressLine2" == "--country" ] || [ "$addressLine2" == "--license" ] || [ "$addressLine2" == "--quiet" ] || [ -z "$addressLine2" ];
+        if [ "$addressLine2" == "--addressLine1" ] || [ "$addressLine2" == "--addressLine3" ] || [ "$addressLine2" == "--locality" ] || [ "$addressLine2" == "--administrativeArea" ] || [ "$addressLine2" == "--postalCode" ] || [ "$addressLine2" == "--country" ] || [ "$addressLine2" == "--dataPath" ] || [ "$addressLine2" == "--license" ] || [ "$addressLine2" == "--quiet" ] || [ -z "$addressLine2" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'addressLine2\'.${NC}\n"  
             exit 1
@@ -43,7 +44,7 @@ while [ $# -gt 0 ] ; do
     --addressLine3) 
         addressLine3="$2"
 
-        if [ "$addressLine3" == "--addressLine1" ] || [ "$addressLine3" == "--addressLine2" ] || [ "$addressLine3" == "--locality" ] || [ "$addressLine3" == "--administrativeArea" ] || [ "$addressLine3" == "--postalCode" ] || [ "$addressLine3" == "--country" ] || [ "$addressLine3" == "--license" ] || [ "$addressLine3" == "--quiet" ] || [ -z "$addressLine3" ];
+        if [ "$addressLine3" == "--addressLine1" ] || [ "$addressLine3" == "--addressLine2" ] || [ "$addressLine3" == "--locality" ] || [ "$addressLine3" == "--administrativeArea" ] || [ "$addressLine3" == "--postalCode" ] || [ "$addressLine3" == "--country" ] || [ "$addressLine3" == "--dataPath" ] || [ "$addressLine3" == "--license" ] || [ "$addressLine3" == "--quiet" ] || [ -z "$addressLine3" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'addressLine3\'.${NC}\n"  
             exit 1
@@ -52,7 +53,7 @@ while [ $# -gt 0 ] ; do
     --locality) 
         locality="$2"
 
-        if [ "$locality" == "--addressLine1" ] || [ "$locality" == "--addressLine2" ] || [ "$locality" == "--addressLine3" ] || [ "$locality" == "--administrativeArea" ] || [ "$locality" == "--postalCode" ] || [ "$locality" == "--country" ] || [ "$locality" == "--license" ] || [ "$locality" == "--quiet" ] || [ -z "$locality" ];
+        if [ "$locality" == "--addressLine1" ] || [ "$locality" == "--addressLine2" ] || [ "$locality" == "--addressLine3" ] || [ "$locality" == "--administrativeArea" ] || [ "$locality" == "--postalCode" ] || [ "$locality" == "--country" ] || [ "$locality" == "--dataPath" ] || [ "$locality" == "--license" ] || [ "$locality" == "--quiet" ] || [ -z "$locality" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'locality\'.${NC}\n"  
             exit 1
@@ -61,7 +62,7 @@ while [ $# -gt 0 ] ; do
     --administrativeArea) 
         administrativeArea="$2"
 
-        if [ "$administrativeArea" == "--addressLine1" ] || [ "$administrativeArea" == "--addressLine2" ] || [ "$administrativeArea" == "--addressLine3" ] || [ "$administrativeArea" == "--locality" ] || [ "$administrativeArea" == "--postalCode" ] || [ "$administrativeArea" == "--country" ] || [ "$administrativeArea" == "--license" ] || [ "$administrativeArea" == "--quiet" ] || [ -z "$administrativeArea" ];
+        if [ "$administrativeArea" == "--addressLine1" ] || [ "$administrativeArea" == "--addressLine2" ] || [ "$administrativeArea" == "--addressLine3" ] || [ "$administrativeArea" == "--locality" ] || [ "$administrativeArea" == "--postalCode" ] || [ "$administrativeArea" == "--country" ] || [ "$administrativeArea" == "--dataPath" ] || [ "$administrativeArea" == "--license" ] || [ "$administrativeArea" == "--quiet" ] || [ -z "$administrativeArea" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'administrativeArea\'.${NC}\n"  
             exit 1
@@ -70,7 +71,7 @@ while [ $# -gt 0 ] ; do
     --postalCode) 
         postalCode="$2"
 
-        if [ "$postalCode" == "--addressLine1" ] || [ "$postalCode" == "--addressLine2" ] || [ "$postalCode" == "--addressLine3" ] || [ "$postalCode" == "--locality" ] || [ "$postalCode" == "--administrativeArea" ] || [ "$postalCode" == "--country" ] || [ "$postalCode" == "--license" ] || [ "$postalCode" == "--quiet" ] || [ -z "$postalCode" ];
+        if [ "$postalCode" == "--addressLine1" ] || [ "$postalCode" == "--addressLine2" ] || [ "$postalCode" == "--addressLine3" ] || [ "$postalCode" == "--locality" ] || [ "$postalCode" == "--administrativeArea" ] || [ "$postalCode" == "--country" ] || [ "$postalCode" == "--dataPath" ] || [ "$postalCode" == "--license" ] || [ "$postalCode" == "--quiet" ] || [ -z "$postalCode" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'zip\'.${NC}\n"  
             exit 1
@@ -79,16 +80,25 @@ while [ $# -gt 0 ] ; do
     --country) 
         country="$2"
 
-        if [ "$country" == "--addressLine1" ] || [ "$country" == "--addressLine2" ] || [ "$country" == "--addressLine3" ] || [ "$country" == "--locality" ] || [ "$country" == "--administrativeArea" ] || [ "$country" == "--postalCode" ] || [ "$country" == "--license" ] || [ "$country" == "--quiet" ] || [ -z "$country" ];
+        if [ "$country" == "--addressLine1" ] || [ "$country" == "--addressLine2" ] || [ "$country" == "--addressLine3" ] || [ "$country" == "--locality" ] || [ "$country" == "--administrativeArea" ] || [ "$country" == "--postalCode" ] || [ "$country" == "--dataPath" ] || [ "$country" == "--license" ] || [ "$country" == "--quiet" ] || [ -z "$country" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'country\'.${NC}\n"  
+            exit 1
+        fi   
+        ;;		
+    --dataPath) 
+        dataPath="$2"
+
+        if [ "$dataPath" == "--addressLine1" ] || [ "$dataPath" == "--addressLine2" ] || [ "$dataPath" == "--addressLine3" ] || [ "$dataPath" == "--locality" ] || [ "$dataPath" == "--administrativeArea" ] || [ "$dataPath" == "--postalCode" ] || [ "$dataPath" == "--license" ] || [ "$dataPath" == "--quiet" ] || [ -z "$dataPath" ];
+        then
+            printf "${RED}Error: Missing an argument for parameter \'dataPath\'.${NC}\n"  
             exit 1
         fi   
         ;;		
     --license) 
         license="$2"
 
-        if [ "$license" == "--addressLine1" ] || [ "$license" == "--addressLine2" ] || [ "$license" == "--addressLine3" ] || [ "$license" == "--locality" ] || [ "$license" == "--administrativeArea" ] || [ "$license" == "--postalCode" ] || [ "$license" == "--country" ] || [ "$license" == "--quiet" ] || [ -z "$license" ];
+        if [ "$license" == "--addressLine1" ] || [ "$license" == "--addressLine2" ] || [ "$license" == "--addressLine3" ] || [ "$license" == "--locality" ] || [ "$license" == "--administrativeArea" ] || [ "$license" == "--postalCode" ] || [ "$license" == "--country" ] || [ "$license" == "--dataPath" ] || [ "$license" == "--quiet" ] || [ -z "$license" ];
         then
             printf "${RED}Error: Missing an argument for parameter \'license\'.${NC}\n"  
             exit 1
@@ -97,7 +107,7 @@ while [ $# -gt 0 ] ; do
     --quiet) 
         quiet="true" 
         
-        if [ "$quiet" == "--addressLine1" ] || [ "$quiet" == "--addressLine2" ] || [ "$quiet" == "--addressLine3" ] || [ "$quiet" == "--locality" ] || [ "$quiet" == "--administrativeArea" ] || [ "$quiet" == "--postalCode" ] || [ "$quiet" == "--country" ] || [ "$quiet" == "--quiet" ] || [ -z "$quiet" ];
+        if [ "$quiet" == "--addressLine1" ] || [ "$quiet" == "--addressLine2" ] || [ "$quiet" == "--addressLine3" ] || [ "$quiet" == "--locality" ] || [ "$quiet" == "--administrativeArea" ] || [ "$quiet" == "--postalCode" ] || [ "$quiet" == "--country" ] || [ "$quiet" == "--dataPath" ] || [ "$quiet" == "--quiet" ] || [ -z "$quiet" ];
         then
             printf "${RED}Error: problem setting \'quiet\'.${NC}\n"  
             exit 1
@@ -109,25 +119,36 @@ done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2023.Q4'
+RELEASE_VERSION='2024.Q1'
 ProductName="GLOBAL_DQ_DATA"
 
 # Uses the location of the .sh file 
-# Modify this if you want to use 
 CurrentPath=$(pwd)
 ProjectPath="$CurrentPath/MelissaGlobalAddressObjectLinuxDotnet"
+
 BuildPath="$ProjectPath/Build"
-DataPath="$ProjectPath/Data"
-
-if [ ! -d $DataPath ];
+if [ ! -d "$BuildPath" ];
 then
-    mkdir $DataPath
+    mkdir "$BuildPath"
 fi
 
-if [ ! -d $BuildPath ];
+if [ -z "$dataPath" ];
 then
-    mkdir $BuildPath
+    DataPath="$ProjectPath/Data"
+else
+    DataPath=$dataPath
 fi
+
+if [ ! -d "$DataPath" ] && [ "$DataPath" == "$ProjectPath/Data" ];
+then
+    mkdir "$DataPath"
+elif [ ! -d "$DataPath" ] && [ "$DataPath" != "$ProjectPath/Data" ];
+then
+    printf "\nData file path does not exist. Please check that your file path is correct.\n"
+    printf "\nAborting program, see above.\n"
+    exit 1
+fi
+
 
 # Config variables for download file(s)
 Config1_FileName="libmdGlobalAddr.so"
@@ -169,7 +190,7 @@ Wrapper_Type="INTERFACE"
 
 DownloadDataFiles()
 {
-    printf "========================== MELISSA UPDATER =========================\n"
+    printf "============================== MELISSA UPDATER ============================\n"
     printf "MELISSA UPDATER IS DOWNLOADING DATA FILE(S)...\n"
 
     ./MelissaUpdater/MelissaUpdater manifest -p $ProductName -r $RELEASE_VERSION -l $1 -t $DataPath 
@@ -330,18 +351,25 @@ then
   exit 1
 fi
 
+# Get data file path (either from parameters or user input)
+if [ "$DataPath" = "$ProjectPath/Data" ]; then
+    printf "Please enter your data files path directory if you have already downloaded the release zip.\nOtherwise, the data files will be downloaded using the Melissa Updater (Enter to skip): "
+    read dataPathInput
+
+    if [ ! -z "$dataPathInput" ]; then  
+        if [ ! -d "$dataPathInput" ]; then  
+            printf "\nData file path does not exist. Please check that your file path is correct.\n"
+            printf "\nAborting program, see above.\n"
+            exit 1
+        else
+            DataPath=$dataPathInput
+        fi
+    fi
+fi
+
 # Use Melissa Updater to download data file(s) 
 # Download data file(s) 
-DownloadDataFiles $license      # comment out this line if using DQS Release
-
-# Set data file(s) path
-#DataPath=""      # uncomment this line and change to your DQS Release data file(s) directory 
-
-#if [ ! -d $DataPath ]; # uncomment this section of code if you are using your own DQS Release data file(s) directory
-#then
-    #printf "\nData path is invalid!\n"
-    #exit 1
-#fi
+DownloadDataFiles $license # Comment out this line if using own release
 
 # Download SO(s)
 DownloadSO $license 
