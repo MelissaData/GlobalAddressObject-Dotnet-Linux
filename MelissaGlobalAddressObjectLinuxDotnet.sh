@@ -106,12 +106,6 @@ while [ $# -gt 0 ] ; do
         ;;
     --quiet) 
         quiet="true" 
-        
-        if [ "$quiet" == "--addressLine1" ] || [ "$quiet" == "--addressLine2" ] || [ "$quiet" == "--addressLine3" ] || [ "$quiet" == "--locality" ] || [ "$quiet" == "--administrativeArea" ] || [ "$quiet" == "--postalCode" ] || [ "$quiet" == "--country" ] || [ "$quiet" == "--dataPath" ] || [ "$quiet" == "--quiet" ] || [ -z "$quiet" ];
-        then
-            printf "${RED}Error: problem setting \'quiet\'.${NC}\n"  
-            exit 1
-        fi    
         ;;
   esac
   shift
@@ -119,7 +113,7 @@ done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2024.Q1'
+RELEASE_VERSION='2024.Q2'
 ProductName="GLOBAL_DQ_DATA"
 
 # Uses the location of the .sh file 
@@ -175,7 +169,7 @@ Config3_Type="BINARY"
 Config4_FileName="libmdRightFielder.so"
 Config4_ReleaseVersion=$RELEASE_VERSION
 Config4_OS="LINUX"
-Config4_Compiler="GCC41"
+Config4_Compiler="GCC48"
 Config4_Architecture="64BIT"
 Config4_Type="BINARY"
 
