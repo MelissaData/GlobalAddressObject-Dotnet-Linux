@@ -42,7 +42,7 @@ And return
 
 ## Tested Environments
 - Linux 64-bit .NET 7.0, Ubuntu 20.04.05 LTS
-- Melissa data files for 2024-Q3
+- Melissa data files for 2024-Q4
 
 ## Required File(s) and Programs
 This is the c++ code of the Melissa Object.
@@ -130,8 +130,8 @@ Once all of this is done, you should be able to verify that the SDK is installed
 
 #### Download this project
 ```
-$ git clone https://github.com/MelissaData/GlobalAddressObject-Dotnet-Linux
-$ cd GlobalAddressObject-Dotnet-Linux
+git clone https://github.com/MelissaData/GlobalAddressObject-Dotnet-Linux
+cd GlobalAddressObject-Dotnet-Linux
 ```
 
 #### Set up Melissa Updater 
@@ -195,11 +195,11 @@ When you have modified the script to match your data location, let's run the scr
     
     The script will prompt the user for an address line 1, address line 2, address line 3, locality, administrative area, postal code, and country, then use the provided inputs to test Global Address Object. For example:
     ```
-    $ ./MelissaGlobalAddressObjectLinuxDotnet.sh
+    ./MelissaGlobalAddressObjectLinuxDotnet.sh
     ```
     For quiet mode:
     ```
-    $ ./MelissaGlobalAddressObjectLinuxDotnet.sh --quiet
+    ./MelissaGlobalAddressObjectLinuxDotnet.sh --quiet
     ```
 
 - Command Line
@@ -208,13 +208,13 @@ When you have modified the script to match your data location, let's run the scr
 
     With all parameters:
     ```
-    $ ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany" 
-    $ ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"  --license "<your_license_string>"
+    ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany" 
+    ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"  --license "<your_license_string>"
     ```
     For quiet mode:
     ```
-    $ ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"  --quiet
-    $ ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"  --license "<your_license_string>" --quiet
+    ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"  --quiet
+    ./MelissaGlobalAddressObjectLinuxDotnet.sh --addressLine1 "Melissa Data GmbH" --addressLine2 "Cäcilienstr. 42-44" --addressLine3 "50667 Köln" --country "Germany"  --license "<your_license_string>" --quiet
     ```
 This is the expected outcome of a successful setup for interactive mode:
 
