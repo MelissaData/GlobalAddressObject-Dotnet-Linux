@@ -390,7 +390,7 @@ printf "\nAll file(s) have been downloaded/updated!\n"
 # Build project
 printf "\n=========================== BUILD PROJECT ==========================\n"
 
-dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaGlobalAddressObjectLinuxDotnet/MelissaGlobalAddressObjectLinuxDotnet.csproj
+dotnet publish -f="net8.0" -c Release -o $BuildPath MelissaGlobalAddressObjectLinuxDotnet/MelissaGlobalAddressObjectLinuxDotnet.csproj
 
 # Run Project
 if [ -z "$addressLine1" ] && [ -z "$addressLine2" ] && [ -z "$addressLine3" ] && [ -z "$locality" ] && [ -z "$administrativeArea" ] && [ -z "$postalCode" ] && [ -z "$country" ];
